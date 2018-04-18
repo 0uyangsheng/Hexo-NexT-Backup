@@ -3,10 +3,16 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
+# 站点图标啦，直接去 https://realfavicongenerator.net
+# 选项弄好后，下载压缩包，解压复制粘贴
+# 建议放在 hexo-site/source/images/ 里（没有自己建）
+# 这样可以避免更新 NexT 主题的时候遇到麻烦
+# 最后记得要稍微改下文件名，与下面的保持一致
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+# 站点关键字，利于 SEO 大概，记得用英文逗号分隔
+keywords: "linux,web,android,uboot,drivers"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -14,7 +20,7 @@ keywords: "Hexo, NexT"
 rss: false
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2018
 
 # icon between year and author @Footer
 authoricon: heart
@@ -120,9 +126,10 @@ social_icons:
 #links_title: Links
 #links_layout: block
 #links_layout: inline
-#links:
+links:
   #Title: http://example.com/
-
+  获取 Elon Musk 的新闻: https://elonmusknews.org/
+  这个建站教程diao: https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
@@ -167,7 +174,7 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
   
   # Enable sidebar on narrow view
   onmobile: false
@@ -203,8 +210,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   separated_meta: true
 
 # Wechat Subscriber
@@ -221,7 +228,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: true
+  enable: false
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -328,7 +335,13 @@ disqus:
   count: true
 
 # Hypercomments
-#hypercomments_id:
+# 我用的就是这种，特点是可以匿名评论，暂时还没有加入 GFW 名单
+# https://www.hypercomments.com/
+# 自己去网站用 Google 邮箱注册，有啥不懂请留言评论
+# 建议你把 Quote（管理台右上角的 Settings 按钮，然后 Widget 里）关了
+# 鼠标在一些段落上时，这个 Quote 会在后面显示一个图标
+# 或者选中一段文字，会有……
+hypercomments_id: 103842
 
 # changyan
 changyan:
@@ -338,7 +351,7 @@ changyan:
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-youyan_uid: 2161348
+#youyan_uid: 2161348
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -363,8 +376,13 @@ youyan_uid: 2161348
 # See: https://www.google.com/webmasters/
 #google_site_verification:
 
+
 # Google Analytics
-#google_analytics:
+google_analytics: UA-117742988-1
+
+# Webmaster 是用来提交自己的文章链接给 Google
+# 然后别人就有可能通过 Google 搜索到自己的博客
+# 这个必须做，如果你的文章想被别人看到的话
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
@@ -417,13 +435,16 @@ vkontakte_api:
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
-  enable: true
+  enable: false
   id:     10934
   color:  fc6423
 
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
+# 可以显示每篇文章的阅读量
+# 然后可以通过阅读量建立 TopX 页面，教程链接：
+# https://notes.wanghao.work/2015-10-21-为NexT主题添加文章阅读量统计功能.html
 leancloud_visitors:
   enable: false
   app_id: #<app_id>
@@ -477,7 +498,7 @@ calendar:
 
 # Algolia Search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 10
   labels:
@@ -487,8 +508,10 @@ algolia_search:
 
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
+# 要安装插件才能使用，先进入站点文件夹根目录
+# 然后：npm install hexo-generator-searchdb --save
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -512,8 +535,8 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
-  icons: false
+  style: flat
+  icons: true
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
@@ -544,6 +567,7 @@ fancybox: true
 
 # Progress bar in the top during page loading.
 pace: false
+# 页面顶部加载条
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -668,3 +692,9 @@ images: images
 
 # Theme version
 version: 5.1.2
+
+# 文章末尾添加“本文结束”标记，请勿直接添加，教程链接：
+# http://shenzekun.cn/hexo的next主题个性化配置教程.html
+# 见第 7 节，在每篇文章末尾统一添加“本文结束”标记
+passage_end_tag:
+  enabled: true
